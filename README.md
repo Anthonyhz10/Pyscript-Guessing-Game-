@@ -21,3 +21,13 @@
     <button type="button" id="submit">Check Guess</button>
     <label for="result">Result:</label><div name="result" id="result"></div>
 </form>
+<py-script>
+    from pyscript import when
+    @when("click", selection="#submit")
+    def check_guess(): 
+        user_guess = int(Element("guess").value)
+        result = Element("result")
+        if user_guess == selection:
+           result.write("Try again! Your guess was too low.")
+</py-script>
+
